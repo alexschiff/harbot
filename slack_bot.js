@@ -77,7 +77,7 @@ var controller = Botkit.slackbot({
 });
 
 var bot = controller.spawn({
-    token: process.env.token
+    SLACK_TOKEN: process.env.token
 }).startRTM();
 
 var HarQuotes = [
