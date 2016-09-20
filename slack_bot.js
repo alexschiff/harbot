@@ -163,7 +163,7 @@ controller.hears(['Harbaugh', 'Go Blue', 'Hail', 'Good morning', 'Michigan', 'kh
 
 controller.hears(['Harbaugh', 'Go Blue', 'Hail', 'Good morning', 'Michigan', 'khaki'], 'ambient', function(bot, message) {
 
-    var chooseQuote  = HarQuotes[Math.random() * HarQuotes.length | 0]
+    var chooseQuote  = JudyQuotes[Math.random() * JudyQuotes.length | 0]
 
     bot.reply(message, chooseQuote)
 
