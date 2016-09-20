@@ -127,16 +127,23 @@ var HarQuotes = [
         "It’s going to get real-real, and it’s going to get real-real, real fast for these young guys.",
         "I reduce a lot of drag by not having to choose what your going to wear everyday.",
         "So I anticipate the we’ll have some precipitation, some weather, and that will be a great thing for us.",
-        "Big Congrats to Judge Judy on signing her contract extension thru 2020 from a Devout Fan!",
         "Trust is big to me. I'm a big fan of the Judge Judy show. When you lie in Judge Judy's courtroom, it's over. Your credibility is completely lost and you stand no chance of winning that case. I learned that from her. It's very powerful. And true. If somebody lies to you, how can you trust anything they say after that?",
         "A shout out from @JudgeJudy would make anyone's day, thank you! The BEST! & Excellence are easy to spot, Judge Judy is it's highest level.",
         "If worms had machine guns, then birds wouldn't be scared of them, you know?",
         "I've been trying to advise them to get two costumes, to be go-getters. Hit the neighborhood in one costume. Better to jog or run from house to house, then you can get more candy than anybody else. Then come home and make a quick change into a second costume and hit those same houses again.",
         "Zoo lions get tired of zebra after a while and want filet mignon. Not jungle lions.",
         "I take a vitamin every day; it's called a steak.",
-        "That's kind of the way the pickle squired this year.",
+        "That's kind of the way the pickle squirted this year.",
         "There’s a battle rhythm, a body clock that tells you it’s time for football. For me, it’s always I know when I get my first football dream. That’s my body clock telling me it’s time to compete.",
     ]
+
+var JudyQuotes = [
+           "A shout out from @JudgeJudy would make anyone's day, thank you! The BEST! & Excellence are easy to spot, Judge Judy is it's highest level.",
+           "Big Congrats to Judge Judy on signing her contract extension thru 2020 from a Devout Fan!",
+           "Trust is big to me. I'm a big fan of the Judge Judy show. When you lie in Judge Judy's courtroom, it's over. Your credibility is completely lost and you stand no chance of winning that case. I learned that from her. It's very powerful. And true. If somebody lies to you, how can you trust anything they say after that?",
+           "When you lie in Judge Judy's court room, it's over.",
+           "We have some great Supreme Court members, tremendous Supreme Court currently that we have, but I'd love to see Judge Judy on the Supreme Court. I just love everything about her.",
+           ]
 
 controller.hears([''], 'direct_message,direct_mention,mention', function(bot, message) {
 
@@ -154,7 +161,13 @@ controller.hears(['Harbaugh', 'Go Blue', 'Hail', 'Good morning', 'Michigan', 'kh
 
     });
 
+controller.hears(['Harbaugh', 'Go Blue', 'Hail', 'Good morning', 'Michigan', 'khaki'], 'ambient', function(bot, message) {
 
+    var chooseQuote  = HarQuotes[Math.random() * HarQuotes.length | 0]
+
+    bot.reply(message, chooseQuote)
+
+    });
 
 controller.hears(['shutdown'], 'direct_message,direct_mention,mention', function(bot, message) {
 
